@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Snowman Game</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Snowman Game</h1>
+        <div class="snowman-graphic">
+            <pre>{{ snowman_graphic }}</pre>
+        </div>
+        <div class="word-progress">
+            <p>{{ word_progress }}</p>
+        </div>
+        <div class="guessed-letters">
+            <p>Guessed letters: {{ guessed_letters }}</p>
+        </div>
+        <div class="wrong-guesses">
+            <p>Wrong guesses: {{ wrong_guesses }} - {{ guesses_left }} guesses left!</p>
+        </div>
+        <form action="{{ url_for('guess') }}" method="POST">
+            <input type="hidden" name="word" value="{{ snowman_word }}">
+            <input type="hidden" name="guessed_letters" value="{{ guessed_letters | tojson | safe }}">
+            <input type="text" name="guess" placeholder="Guess a letter" required>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

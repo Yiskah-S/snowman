@@ -1,0 +1,20 @@
+.container {
+    text-align: center;
+}
+
+.snowman-graphic {
+    font-family: monospace;
+}
+
+.word-progress, .guessed-letters, .wrong-guesses {
+    margin-top: 20px;
+}
+
+input[type="text"] {
+    padding: 5px;
+}
+
+button {
+    padding: 5px 10px;
+    margin-top: 10px;
+}

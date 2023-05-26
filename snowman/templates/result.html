@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Snowman Game</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Snowman Game</h1>
+        <div class="result">
+            <p>{{ result }}</p>
+        </div>
+        <form action="{{ url_for('play') }}" method="POST">
+            <button type="submit">Play Again</button>
+        </form>
+    </div>
+</body>
+</html>
